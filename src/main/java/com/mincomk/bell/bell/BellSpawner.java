@@ -115,7 +115,6 @@ public class BellSpawner {
     }
 
     public static void updateBell(ArmorStand as) {
-        // TODO Change to matrix
         var pdc = as.getPersistentDataContainer();
         var idKey = new NamespacedKey(Bell.BELL_KEY, "id");
         var id = pdc.get(idKey, PersistentDataType.STRING);
