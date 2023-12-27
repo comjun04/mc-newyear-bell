@@ -10,7 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
-public class ResetCommand implements CommandExecutor {   @Override
+public class ResetCommand implements CommandExecutor {
+    @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         var id = args[0];
         var p = (Player) commandSender;
