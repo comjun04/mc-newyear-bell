@@ -124,7 +124,7 @@ public class BellSpawner {
                 var bdpdc = bd.getPersistentDataContainer();
                 var bellIdKey = new NamespacedKey(Bell.BELL_KEY, "id");
                 var bellId = bdpdc.get(bellIdKey, PersistentDataType.STRING);
-                if (bellId.equals(id)) {
+                if (bellId != null && bellId.equals(id)) {
                     var bellGoldKey = new NamespacedKey(Bell.BELL_KEY, "gold");
                     var bellGold = bdpdc.get(bellGoldKey, PersistentDataType.BOOLEAN);
                     if (bellGold) {
