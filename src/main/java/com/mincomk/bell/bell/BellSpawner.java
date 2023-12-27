@@ -21,7 +21,6 @@ public class BellSpawner {
             new Vector(1, -1, 0),
             new Vector(-1, -1, 0),
 
-
             new Vector(0, -2, 0),
             new Vector(0, -2, 1),
             new Vector(1, -2, 0),
@@ -33,7 +32,6 @@ public class BellSpawner {
             new Vector(-1, -2, 1),
             new Vector(-2, -2, 0),
             new Vector(2, -2, 0),
-
 
             new Vector(2, -3, -1),
             new Vector(2, -3, 0),
@@ -181,7 +179,7 @@ public class BellSpawner {
                 var bdpdc = bd.getPersistentDataContainer();
                 var bellIdKey = new NamespacedKey(Bell.BELL_KEY, "id");
                 var bellId = bdpdc.get(bellIdKey, PersistentDataType.STRING);
-                if (bellId.equals(id)) {
+                if (bellId != null && bellId.equals(id)) {
                     bd.remove();
                 }
             }
