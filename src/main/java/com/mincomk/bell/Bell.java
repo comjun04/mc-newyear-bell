@@ -5,8 +5,10 @@ import com.mincomk.bell.commands.InitCommand;
 import com.mincomk.bell.commands.RemoveCommand;
 import com.mincomk.bell.commands.ResetCommand;
 import com.mincomk.bell.commands.StartCommand;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Bell extends JavaPlugin {
@@ -26,8 +28,7 @@ public final class Bell extends JavaPlugin {
             var w = getServer().getWorlds().get(0);
             w.getEntities().stream().filter((Entity en) ->
                 en.getPersistentDataContainer()
-                        .has(new org.bukkit.NamespacedKey(Bell.BELL_KEY, "tick"),
-                                org.bukkit.persistence.PersistentDataType.BOOLEAN)
+                        .getOrDefault(new NamespacedKey(Bell.BELL_KEY, "tick"), PersistentDataType.BOOLEAN, false)
             ).forEach((Entity en) -> {
                 en.setRotation((float) 0, (float) Math.toDegrees(Math.sin((double) en.getTicksLived() / 10) /6));
                 BellSpawner.updateBell((ArmorStand) en);
