@@ -10,3 +10,5 @@ commands:
     description: n/a
   reset:
     description: n/a
+  remove:
+    description: n/a

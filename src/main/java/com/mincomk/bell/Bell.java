@@ -2,6 +2,7 @@ package com.mincomk.bell;
 
 import com.mincomk.bell.bell.BellSpawner;
 import com.mincomk.bell.commands.InitCommand;
+import com.mincomk.bell.commands.RemoveCommand;
 import com.mincomk.bell.commands.ResetCommand;
 import com.mincomk.bell.commands.StartCommand;
 import org.bukkit.entity.ArmorStand;
@@ -18,6 +19,7 @@ public final class Bell extends JavaPlugin {
         getCommand("init").setExecutor(new InitCommand());
         getCommand("start").setExecutor(new StartCommand());
         getCommand("reset").setExecutor(new ResetCommand());
+        getCommand("remove").setExecutor(new RemoveCommand());
 
         // on tick
         getServer().getScheduler().scheduleSyncRepeatingTask(this, () -> {
